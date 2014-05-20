@@ -114,12 +114,12 @@
 		BBCE38E3192BED3F00F45897 /* TopRegion */ = {
 			isa = PBXGroup;
 			children = (
-				BBCE38EC192BED3F00F45897 /* TopRegionAppDelegate.h */,
-				BBCE38ED192BED3F00F45897 /* TopRegionAppDelegate.m */,
 				BBCE38EF192BED3F00F45897 /* Main_iPhone.storyboard */,
 				BBCE38F2192BED3F00F45897 /* Main_iPad.storyboard */,
 				BBCE38F5192BED3F00F45897 /* TopRegionViewController.h */,
 				BBCE38F6192BED3F00F45897 /* TopRegionViewController.m */,
+				BBCE38EC192BED3F00F45897 /* TopRegionAppDelegate.h */,
+				BBCE38ED192BED3F00F45897 /* TopRegionAppDelegate.m */,
 				BBCE38F8192BED3F00F45897 /* Images.xcassets */,
 				BBCE38E4192BED3F00F45897 /* Supporting Files */,
 			);
