@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A598" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Photo" syncable="YES"/>
-    <entity name="Photograph" syncable="YES"/>
+    <entity name="Photo" representedClassName="Photo" syncable="YES">
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastViewed" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="photoid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailData" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="whoTook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photograph" inverseName="photos" inverseEntity="Photograph" syncable="YES"/>
+    </entity>
+    <entity name="Photograph" representedClassName="Photograph" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="whoTook" inverseEntity="Photo" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Photo" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Photograph" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Photo" positionX="160" positionY="192" width="128" height="148"/>
+        <element name="Photograph" positionX="360" positionY="189" width="128" height="73"/>
     </elements>
 </model>
