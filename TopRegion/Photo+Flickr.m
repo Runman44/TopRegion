@@ -13,7 +13,7 @@
 @implementation Photo (Flickr)
 
 
-+ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary inManagedObjectCOntext:(NSManagedObjectContext *)context
++ (Photo *)photoWithFlickrInfo:(NSDictionary *)photoDictionary inManagedObjectContext:(NSManagedObjectContext *)context
 {
     Photo *photo = nil;
     
@@ -37,7 +37,9 @@
         photo.imageURL = [[FlickrFetcher URLforPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];
         
         NSString *photographerName = [photoDictionary valueForKeyPath:FLICKR_PHOTO_OWNER];
-        photo.whoTook = ([Photograph photographerWithName:photographerName inManagedObjectCOntext:context]);
+        
+
+        photo.whoTook = ([Photograph photographerWithName:photographerName inManagedObjectContext:context]);
     }
     
     return photo;
@@ -45,6 +47,10 @@
 
 + (void)loadPhotosFromFlickrArray:(NSArray *)photos intoManagedObjectContext:(NSManagedObjectContext *)context
 {
+    #warning dit kan beter omdat je nu in de method 100x gaat fetching.. 50:20
+    for (NSDictionary *photo in photos){
+               [self photoWithFlickrInfo:photo inManagedObjectContext:context];
+    }
     
 }
 

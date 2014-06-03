@@ -62,6 +62,7 @@
 		BBB1D1AD193E0165009A903A /* Photograph+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photograph+Create.m"; sourceTree = "<group>"; };
 		BBB1D1AF193E3399009A903A /* PhotographCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotographCDTVC.h; path = ../PhotographCDTVC.h; sourceTree = "<group>"; };
 		BBB1D1B0193E3399009A903A /* PhotographCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotographCDTVC.m; path = ../PhotographCDTVC.m; sourceTree = "<group>"; };
+		BBB1D1B2193E5709009A903A /* PhotoDatabaseAvailability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoDatabaseAvailability.h; sourceTree = "<group>"; };
 		BBCE38DA192BED3F00F45897 /* TopRegion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopRegion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCE38DD192BED3F00F45897 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BBCE38DF192BED3F00F45897 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +175,7 @@
 				BBCE38F6192BED3F00F45897 /* TopRegionViewController.m */,
 				BBCE38EC192BED3F00F45897 /* TopRegionAppDelegate.h */,
 				BBCE38ED192BED3F00F45897 /* TopRegionAppDelegate.m */,
+				BBB1D1B2193E5709009A903A /* PhotoDatabaseAvailability.h */,
 				BBB1D19E193DFB4E009A903A /* Photo.h */,
 				BBB1D1A1193DFD64009A903A /* Photo+Flickr.h */,
 				BBB1D1A2193DFD64009A903A /* Photo+Flickr.m */,

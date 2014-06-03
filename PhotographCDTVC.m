@@ -7,13 +7,22 @@
 //
 
 #import "PhotographCDTVC.h"
+#import "PhotoDatabaseAvailability.h"
 #import "Photograph.h"
+
 
 @interface PhotographCDTVC ()
 
 @end
 
 @implementation PhotographCDTVC
+
+- (void) awakeFromNib
+{
+    [[NSNotificationCenter defaultCenter] addObserverForName:PhotoDatabaseAvailabilityNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        self.managedObjectContext = note.userInfo[PhotoDatabaseAvailabilityContext];
+    }];
+}
 
 -(void) setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
@@ -31,6 +40,8 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Photograph Cell"];
     
     Photograph *photograph = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSLog(@"Photograaf, %@", photograph.name);
+
     cell.textLabel.text = photograph.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d photos",[photograph.photos count]];
     

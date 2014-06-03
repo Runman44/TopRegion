@@ -10,7 +10,7 @@
 
 @implementation Photograph (Create)
 
-+ (Photograph *)photographerWithName:(NSString *)name inManagedObjectCOntext:(NSManagedObjectContext *)context
++ (Photograph *)photographerWithName:(NSString *)name inManagedObjectContext:(NSManagedObjectContext *)context
 {
     Photograph *photograph = nil;
     
@@ -25,13 +25,14 @@
         if (!matches || error || [matches count] > 1) {
             // handle error
             #warning handle error
-        } else if([matches count]){
-            photograph = [matches lastObject];
+        } else if(![matches count]){
+             photograph = [NSEntityDescription insertNewObjectForEntityForName:@"Photograph" inManagedObjectContext:context];
+             photograph.name = name;
         } else {
-            photograph = [NSEntityDescription insertNewObjectForEntityForName:@"Photographer" inManagedObjectContext:context];
+            photograph = [matches lastObject];
         }
     }
-  
+    NSLog(@"Worden wel photos geladen, %@", photograph.name);
     return photograph;
 }
 
