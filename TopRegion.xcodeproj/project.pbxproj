@@ -15,6 +15,7 @@
 		BBB1D1AA193DFED9009A903A /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D1A7193DFED9009A903A /* FlickrFetcher.m */; };
 		BBB1D1AB193DFED9009A903A /* TopPlacesFlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D1A9193DFED9009A903A /* TopPlacesFlickrFetcher.m */; };
 		BBB1D1AE193E0165009A903A /* Photograph+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D1AD193E0165009A903A /* Photograph+Create.m */; };
+		BBB1D1B1193E3399009A903A /* PhotographCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D1B0193E3399009A903A /* PhotographCDTVC.m */; };
 		BBCE38DE192BED3F00F45897 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE38DD192BED3F00F45897 /* Foundation.framework */; };
 		BBCE38E0192BED3F00F45897 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE38DF192BED3F00F45897 /* CoreGraphics.framework */; };
 		BBCE38E2192BED3F00F45897 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE38E1192BED3F00F45897 /* UIKit.framework */; };
@@ -59,6 +60,8 @@
 		BBB1D1A9193DFED9009A903A /* TopPlacesFlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlacesFlickrFetcher.m; sourceTree = "<group>"; };
 		BBB1D1AC193E0165009A903A /* Photograph+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photograph+Create.h"; sourceTree = "<group>"; };
 		BBB1D1AD193E0165009A903A /* Photograph+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photograph+Create.m"; sourceTree = "<group>"; };
+		BBB1D1AF193E3399009A903A /* PhotographCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotographCDTVC.h; path = ../PhotographCDTVC.h; sourceTree = "<group>"; };
+		BBB1D1B0193E3399009A903A /* PhotographCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotographCDTVC.m; path = ../PhotographCDTVC.m; sourceTree = "<group>"; };
 		BBCE38DA192BED3F00F45897 /* TopRegion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopRegion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCE38DD192BED3F00F45897 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BBCE38DF192BED3F00F45897 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -165,6 +168,8 @@
 				BBCE38EF192BED3F00F45897 /* Main_iPhone.storyboard */,
 				BBB1D188193DF165009A903A /* Model.xcdatamodeld */,
 				BBCE38F2192BED3F00F45897 /* Main_iPad.storyboard */,
+				BBB1D1AF193E3399009A903A /* PhotographCDTVC.h */,
+				BBB1D1B0193E3399009A903A /* PhotographCDTVC.m */,
 				BBCE38F5192BED3F00F45897 /* TopRegionViewController.h */,
 				BBCE38F6192BED3F00F45897 /* TopRegionViewController.m */,
 				BBCE38EC192BED3F00F45897 /* TopRegionAppDelegate.h */,
@@ -311,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBB1D1B1193E3399009A903A /* PhotographCDTVC.m in Sources */,
 				BBB1D1A0193DFB4E009A903A /* Photo.m in Sources */,
 				BBB1D1AA193DFED9009A903A /* FlickrFetcher.m in Sources */,
 				BBB1D1A3193DFD64009A903A /* Photo+Flickr.m in Sources */,
