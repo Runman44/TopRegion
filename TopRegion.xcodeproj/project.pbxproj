@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBB1D18A193DF165009A903A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D188193DF165009A903A /* Model.xcdatamodeld */; };
+		BBB1D18D193DF47F009A903A /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D18C193DF47F009A903A /* CoreDataTableViewController.m */; };
 		BBCE38DE192BED3F00F45897 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE38DD192BED3F00F45897 /* Foundation.framework */; };
 		BBCE38E0192BED3F00F45897 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE38DF192BED3F00F45897 /* CoreGraphics.framework */; };
 		BBCE38E2192BED3F00F45897 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE38E1192BED3F00F45897 /* UIKit.framework */; };
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BBB1D189193DF165009A903A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BBB1D18B193DF47F009A903A /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = "../../../photomania-2013-14-master/Photomania/CoreDataTableViewController/CoreDataTableViewController.h"; sourceTree = "<group>"; };
+		BBB1D18C193DF47F009A903A /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = "../../../photomania-2013-14-master/Photomania/CoreDataTableViewController/CoreDataTableViewController.m"; sourceTree = "<group>"; };
 		BBCE38DA192BED3F00F45897 /* TopRegion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopRegion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCE38DD192BED3F00F45897 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BBCE38DF192BED3F00F45897 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBB1D18E193DF486009A903A /* CoreDataTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBB1D18B193DF47F009A903A /* CoreDataTableViewController.h */,
+				BBB1D18C193DF47F009A903A /* CoreDataTableViewController.m */,
+			);
+			name = CoreDataTableViewController;
+			sourceTree = "<group>";
+		};
 		BBCE38D1192BED3F00F45897 = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +128,9 @@
 		BBCE38E3192BED3F00F45897 /* TopRegion */ = {
 			isa = PBXGroup;
 			children = (
+				BBB1D18E193DF486009A903A /* CoreDataTableViewController */,
 				BBCE38EF192BED3F00F45897 /* Main_iPhone.storyboard */,
+				BBB1D188193DF165009A903A /* Model.xcdatamodeld */,
 				BBCE38F2192BED3F00F45897 /* Main_iPad.storyboard */,
 				BBCE38F5192BED3F00F45897 /* TopRegionViewController.h */,
 				BBCE38F6192BED3F00F45897 /* TopRegionViewController.m */,
@@ -257,6 +273,8 @@
 				BBCE38F7192BED3F00F45897 /* TopRegionViewController.m in Sources */,
 				BBCE38EE192BED3F00F45897 /* TopRegionAppDelegate.m in Sources */,
 				BBCE38EA192BED3F00F45897 /* main.m in Sources */,
+				BBB1D18A193DF165009A903A /* Model.xcdatamodeld in Sources */,
+				BBB1D18D193DF47F009A903A /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +493,7 @@
 				BBCE3911192BED4000F45897 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BBCE3912192BED4000F45897 /* Build configuration list for PBXNativeTarget "TopRegionTests" */ = {
 			isa = XCConfigurationList;
@@ -483,8 +502,22 @@
 				BBCE3914192BED4000F45897 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BBB1D188193DF165009A903A /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BBB1D189193DF165009A903A /* Model.xcdatamodel */,
+			);
+			currentVersion = BBB1D189193DF165009A903A /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BBCE38D2192BED3F00F45897 /* Project object */;
 }
