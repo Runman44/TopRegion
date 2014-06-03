@@ -28,11 +28,12 @@
         } else if(![matches count]){
              photograph = [NSEntityDescription insertNewObjectForEntityForName:@"Photograph" inManagedObjectContext:context];
              photograph.name = name;
+            
         } else {
             photograph = [matches lastObject];
         }
     }
-    NSLog(@"Worden wel photos geladen, %@", photograph.name);
+   
     return photograph;
 }
 

@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString * thumbnailData;
 @property (nonatomic, retain) NSString * photoid;
 @property (nonatomic, retain) NSDate * lastViewed;
+@property (nonatomic, retain) NSString * placeid;
 @property (nonatomic, retain) Photograph *whoTook;
 
 @end

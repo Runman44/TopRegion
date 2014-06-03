@@ -18,6 +18,7 @@
 @dynamic thumbnailData;
 @dynamic photoid;
 @dynamic lastViewed;
+@dynamic placeid;
 @dynamic whoTook;
 
 @end

@@ -40,7 +40,6 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Photograph Cell"];
     
     Photograph *photograph = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    NSLog(@"Photograaf, %@", photograph.name);
 
     cell.textLabel.text = photograph.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d photos",[photograph.photos count]];

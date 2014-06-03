@@ -109,6 +109,7 @@
 {
     NSData *flickrJSONData = [NSData dataWithContentsOfURL:url];
     NSDictionary *flickrPropertyList = [NSJSONSerialization JSONObjectWithData:flickrJSONData options:0 error:NULL];
+    NSLog(@"JSON %@", [flickrPropertyList valueForKeyPath:FLICKR_RESULTS_PHOTOS]);
     return [flickrPropertyList valueForKeyPath:FLICKR_RESULTS_PHOTOS];
 }
 
