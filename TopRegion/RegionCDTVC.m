@@ -9,6 +9,7 @@
 #import "RegionCDTVC.h"
 #import "PhotoDatabaseAvailability.h"
 #import "Region.h"
+#import "ListFlickrPhotosTVC.h"
 
 @interface RegionCDTVC ()
 
@@ -40,7 +41,8 @@
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:managedObjectContext
                                                                           sectionNameKeyPath:nil
-                                                                                   cacheName:nil];}
+                                                                                   cacheName:nil];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -52,6 +54,29 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ photograph",region.numofPhotographer];
     
     return cell;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareViewController:(id)vc forSegue:(NSString *)segueIdentifer fromIndexPath:(NSIndexPath *)indexPath
+{
+    Region *region = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([vc isKindOfClass:[ListFlickrPhotosTVC class]]) {
+        ListFlickrPhotosTVC *lfptvc = (ListFlickrPhotosTVC *)vc;
+        lfptvc.region = region;
+    }
+}
+
+// boilerplate
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = nil;
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        indexPath = [self.tableView indexPathForCell:sender];
+    }
+    [self prepareViewController:segue.destinationViewController
+                       forSegue:segue.identifier
+                  fromIndexPath:indexPath];
 }
 
 @end
