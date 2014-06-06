@@ -27,7 +27,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    # warning create UIManagedDocument !!
     
     // Maak een url path aan naar het document in het apparaat
 	NSFileManager *fileManager = [NSFileManager defaultManager];

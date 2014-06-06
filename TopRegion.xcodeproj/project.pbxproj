@@ -145,6 +145,46 @@
 			name = "Flickr Photos";
 			sourceTree = "<group>";
 		};
+		BBAA8FF71942351A00E8374E /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBAA8FDC1941F2FE00E8374E /* Photo.h */,
+				BBAA8FDD1941F2FE00E8374E /* Photo.m */,
+				BBAA8FD91941F2FE00E8374E /* Place.h */,
+				BBAA8FDA1941F2FE00E8374E /* Place.m */,
+				BBAA8FD61941F2FE00E8374E /* Region.h */,
+				BBAA8FD71941F2FE00E8374E /* Region.m */,
+				BBAA8FD31941F2FE00E8374E /* Photograph.h */,
+				BBAA8FD41941F2FE00E8374E /* Photograph.m */,
+				BBAA8FF81942352900E8374E /* Categories */,
+			);
+			name = CoreDataModel;
+			sourceTree = "<group>";
+		};
+		BBAA8FF81942352900E8374E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BBB1D1A1193DFD64009A903A /* Photo+Flickr.h */,
+				BBB1D1A2193DFD64009A903A /* Photo+Flickr.m */,
+				BBB1D1AC193E0165009A903A /* Photograph+Create.h */,
+				BBB1D1AD193E0165009A903A /* Photograph+Create.m */,
+				BBD37A35193FBEFB005457D0 /* Place+PhotoTaken.h */,
+				BBD37A36193FBEFB005457D0 /* Place+PhotoTaken.m */,
+				BBD37A38193FDEAD005457D0 /* Region+Create.h */,
+				BBD37A39193FDEAD005457D0 /* Region+Create.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		BBAA8FF91942354A00E8374E /* Flickr TopRegions */ = {
+			isa = PBXGroup;
+			children = (
+				BBD37A3E193FE98E005457D0 /* RegionCDTVC.h */,
+				BBD37A3F193FE98E005457D0 /* RegionCDTVC.m */,
+			);
+			name = "Flickr TopRegions";
+			sourceTree = "<group>";
+		};
 		BBB1D18E193DF486009A903A /* CoreDataTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,38 +238,22 @@
 		BBCE38E3192BED3F00F45897 /* TopRegion */ = {
 			isa = PBXGroup;
 			children = (
+				BBAA8FF71942351A00E8374E /* CoreDataModel */,
+				BBB1D18E193DF486009A903A /* CoreDataTableViewController */,
+				BBAA8FF91942354A00E8374E /* Flickr TopRegions */,
 				BBAA8FF31941FBCD00E8374E /* Flickr Photos */,
 				BBAA8FF11941FB9800E8374E /* Flickr Recent */,
 				BBB1D1A4193DFED9009A903A /* Flickr Fetcher */,
-				BBB1D18E193DF486009A903A /* CoreDataTableViewController */,
 				BBCE38EF192BED3F00F45897 /* Main_iPhone.storyboard */,
 				BBCE38F2192BED3F00F45897 /* Main_iPad.storyboard */,
 				BBB1D188193DF165009A903A /* Model.xcdatamodeld */,
 				BBAA8FDF1941FAEB00E8374E /* ImageViewController.h */,
 				BBAA8FE01941FAEB00E8374E /* ImageViewController.m */,
-				BBAA8FDC1941F2FE00E8374E /* Photo.h */,
-				BBAA8FDD1941F2FE00E8374E /* Photo.m */,
-				BBAA8FD91941F2FE00E8374E /* Place.h */,
-				BBAA8FDA1941F2FE00E8374E /* Place.m */,
-				BBAA8FD61941F2FE00E8374E /* Region.h */,
-				BBAA8FD71941F2FE00E8374E /* Region.m */,
-				BBAA8FD31941F2FE00E8374E /* Photograph.h */,
-				BBAA8FD41941F2FE00E8374E /* Photograph.m */,
-				BBD37A3E193FE98E005457D0 /* RegionCDTVC.h */,
-				BBD37A3F193FE98E005457D0 /* RegionCDTVC.m */,
 				BBCE38F5192BED3F00F45897 /* TopRegionViewController.h */,
 				BBCE38F6192BED3F00F45897 /* TopRegionViewController.m */,
 				BBCE38EC192BED3F00F45897 /* TopRegionAppDelegate.h */,
 				BBCE38ED192BED3F00F45897 /* TopRegionAppDelegate.m */,
 				BBB1D1B2193E5709009A903A /* PhotoDatabaseAvailability.h */,
-				BBB1D1A1193DFD64009A903A /* Photo+Flickr.h */,
-				BBB1D1A2193DFD64009A903A /* Photo+Flickr.m */,
-				BBB1D1AC193E0165009A903A /* Photograph+Create.h */,
-				BBB1D1AD193E0165009A903A /* Photograph+Create.m */,
-				BBD37A35193FBEFB005457D0 /* Place+PhotoTaken.h */,
-				BBD37A36193FBEFB005457D0 /* Place+PhotoTaken.m */,
-				BBD37A38193FDEAD005457D0 /* Region+Create.h */,
-				BBD37A39193FDEAD005457D0 /* Region+Create.m */,
 				BBCE38F8192BED3F00F45897 /* Images.xcassets */,
 				BBCE38E4192BED3F00F45897 /* Supporting Files */,
 			);
