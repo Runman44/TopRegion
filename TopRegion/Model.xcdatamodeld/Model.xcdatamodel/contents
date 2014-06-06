@@ -8,14 +8,31 @@
         <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnailData" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="wasTaken" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="photos" inverseEntity="Place" syncable="YES"/>
+        <relationship name="whichRegion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="photos" inverseEntity="Region" syncable="YES"/>
         <relationship name="whoTook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photograph" inverseName="photos" inverseEntity="Photograph" syncable="YES"/>
     </entity>
     <entity name="Photograph" representedClassName="Photograph" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="whoTook" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="whichRegions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Region" inverseName="photographs" inverseEntity="Region" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES">
+        <attribute name="placeid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="wasTaken" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="whichRegion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="places" inverseEntity="Region" syncable="YES"/>
+    </entity>
+    <entity name="Region" representedClassName="Region" syncable="YES">
+        <attribute name="numofPhotographer" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="regionname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photographs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photograph" inverseName="whichRegions" inverseEntity="Photograph" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="whichRegion" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="places" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Place" inverseName="whichRegion" inverseEntity="Place" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Photo" positionX="160" positionY="192" width="128" height="163"/>
-        <element name="Photograph" positionX="360" positionY="189" width="128" height="73"/>
+        <element name="Photo" positionX="142" positionY="228" width="128" height="193"/>
+        <element name="Photograph" positionX="376" positionY="332" width="128" height="88"/>
+        <element name="Place" positionX="97" positionY="32" width="128" height="88"/>
+        <element name="Region" positionX="331" positionY="72" width="128" height="118"/>
     </elements>
 </model>

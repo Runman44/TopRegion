@@ -9,6 +9,7 @@
 #import "TopRegionAppDelegate.h"
 #import "FlickrFetcher.h"
 #import "Photo+Flickr.h"
+#import "Place+PhotoTaken.h"
 #import "PhotoDatabaseAvailability.h"
 
 @interface TopRegionAppDelegate() <NSURLSessionDownloadDelegate>

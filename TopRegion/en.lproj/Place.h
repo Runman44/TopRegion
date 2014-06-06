@@ -1,23 +1,24 @@
 //
-//  Photograph.h
+//  Place.h
 //  TopRegion
 //
-//  Created by Dennis Anderson on 6/3/14.
+//  Created by Dennis Anderson on 6/4/14.
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Photo;
+@class Photo, Region;
 
-@interface Photograph : NSManagedObject
+@interface Place : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * placeid;
 @property (nonatomic, retain) NSSet *photos;
+@property (nonatomic, retain) Region *locatedIn;
 @end
 
-@interface Photograph (CoreDataGeneratedAccessors)
+@interface Place (CoreDataGeneratedAccessors)
 
 - (void)addPhotosObject:(Photo *)value;
 - (void)removePhotosObject:(Photo *)value;

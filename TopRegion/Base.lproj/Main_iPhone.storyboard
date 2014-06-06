@@ -4,16 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--PhotographCDTVC-->
+        <!--RegionCDTVC-->
         <scene sceneID="uva-Zo-BCt">
             <objects>
-                <tableViewController id="Q30-kP-SPy" customClass="PhotographCDTVC" sceneMemberID="viewController">
+                <tableViewController id="Q30-kP-SPy" customClass="RegionCDTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9fh-ag-adI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photograph Cell" textLabel="MBB-Ll-v5e" detailTextLabel="tRk-Nx-Mb5" style="IBUITableViewCellStyleSubtitle" id="DH8-FJ-b8G">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Region Cell" textLabel="MBB-Ll-v5e" detailTextLabel="tRk-Nx-Mb5" style="IBUITableViewCellStyleSubtitle" id="DH8-FJ-b8G">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DH8-FJ-b8G" id="dPX-bB-GmT">

@@ -1,5 +1,5 @@
 //
-//  Photograph.h
+//  Place.h
 //  TopRegion
 //
 //  Created by Dennis Anderson on 6/6/14.
@@ -11,23 +11,18 @@
 
 @class Photo, Region;
 
-@interface Photograph : NSManagedObject
+@interface Place : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * placeid;
+@property (nonatomic, retain) Region *whichRegion;
 @property (nonatomic, retain) NSSet *photos;
-@property (nonatomic, retain) NSSet *whichRegions;
 @end
 
-@interface Photograph (CoreDataGeneratedAccessors)
+@interface Place (CoreDataGeneratedAccessors)
 
 - (void)addPhotosObject:(Photo *)value;
 - (void)removePhotosObject:(Photo *)value;
 - (void)addPhotos:(NSSet *)values;
 - (void)removePhotos:(NSSet *)values;
-
-- (void)addWhichRegionsObject:(Region *)value;
-- (void)removeWhichRegionsObject:(Region *)value;
-- (void)addWhichRegions:(NSSet *)values;
-- (void)removeWhichRegions:(NSSet *)values;
 
 @end
