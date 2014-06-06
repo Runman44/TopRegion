@@ -49,8 +49,11 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Region Cell"];
     
     Region *region = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
+    if (region.regionname){
     cell.textLabel.text = region.regionname;
+    } else {
+    cell.textLabel.text = @"Unknown";
+    }
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ photograph",region.numofPhotographer];
     
     return cell;
