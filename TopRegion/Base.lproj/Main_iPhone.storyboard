@@ -95,12 +95,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Top 50 Images" id="3o8-eD-lAi"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fzG-Pt-CCf">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <connections>
-                            <action selector="fetchPhotos" destination="OSz-aL-MRs" eventType="valueChanged" id="4lW-PT-iQ3"/>
-                        </connections>
-                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z18-BI-7Bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,13 +132,7 @@
                             <constraint firstAttribute="centerX" secondItem="nUh-yG-7tK" secondAttribute="centerX" id="vDl-Sj-ghg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="XdV-ro-myl">
-                        <barButtonItem key="rightBarButtonItem" title="Favorite" id="mna-23-tiC">
-                            <connections>
-                                <action selector="addToFavorite:" destination="N9N-Vq-Pdy" id="9w0-hu-555"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="XdV-ro-myl"/>
                     <connections>
                         <outlet property="scrollView" destination="q9P-ge-ThS" id="XbJ-Zq-5wj"/>
                         <outlet property="spinner" destination="nUh-yG-7tK" id="sm9-RV-PCV"/>
