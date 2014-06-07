@@ -17,7 +17,7 @@
 
 @implementation RegionCDTVC
 
-#define MAX_REGIONS 50
+#define MAXREGIONS 50
 
 - (void) awakeFromNib
 {
@@ -37,7 +37,7 @@
                                 [NSSortDescriptor sortDescriptorWithKey:@"regionname"
                                                               ascending:NO
                                                                selector:@selector(localizedStandardCompare:)]];
-    [request setFetchLimit:MAX_REGIONS];
+    request.fetchLimit = MAXREGIONS;
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:managedObjectContext
                                                                           sectionNameKeyPath:nil

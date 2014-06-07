@@ -98,7 +98,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89C-Pj-J3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3048" y="436"/>
+            <point key="canvasLocation" x="2522" y="358"/>
         </scene>
         <!--List Flickr PhotosTVC - Top 50 Images-->
         <scene sceneID="wPc-FL-vDZ">
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjn-7d-9LP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="14"/>
+            <point key="canvasLocation" x="3104" y="-22"/>
         </scene>
         <!--Navigation Controller - TopRegions-->
         <scene sceneID="nFH-V0-k5m">

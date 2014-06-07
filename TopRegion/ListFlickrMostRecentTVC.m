@@ -15,12 +15,6 @@
 
 @implementation ListFlickrMostRecentTVC
 
-- (void) awakeFromNib
-{
-    [[NSNotificationCenter defaultCenter] addObserverForName:PhotoDatabaseAvailabilityNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        self.managedObjectContext = note.userInfo[PhotoDatabaseAvailabilityContext];
-    }];
-}
 
 - (void) viewDidLoad
 {
@@ -37,7 +31,7 @@
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
         request.predicate = nil;
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastViewed"
-                                                                  ascending:YES
+                                                                  ascending:NO
                                                                    selector:@selector(localizedStandardCompare:)]];
         request.fetchLimit = MAXRESULTS;
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
