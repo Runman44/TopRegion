@@ -35,7 +35,7 @@
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"numofPhotographer"
                                                               ascending:NO],
                                 [NSSortDescriptor sortDescriptorWithKey:@"regionname"
-                                                              ascending:NO
+                                                              ascending:YES
                                                                selector:@selector(localizedStandardCompare:)]];
     request.fetchLimit = MAXREGIONS;
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
