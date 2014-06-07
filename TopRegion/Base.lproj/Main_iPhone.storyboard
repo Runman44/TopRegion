@@ -52,6 +52,54 @@
             </objects>
             <point key="canvasLocation" x="1636" y="-318"/>
         </scene>
+        <!--List Flickr Most RecentTVC - Most Recent-->
+        <scene sceneID="p7f-YW-1fC">
+            <objects>
+                <tableViewController title="Most Recent" id="hOF-4g-uwx" customClass="ListFlickrMostRecentTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eqy-fg-Myn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Flickr Photo Cell" textLabel="tF6-Fg-d0f" detailTextLabel="Qib-CL-0b5" style="IBUITableViewCellStyleSubtitle" id="ob9-C7-TmE">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ob9-C7-TmE" id="LEk-Gg-O1g">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tF6-Fg-d0f">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qib-CL-0b5">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="N9N-Vq-Pdy" kind="push" identifier="picture" id="8hq-q1-Puz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hOF-4g-uwx" id="l0n-TF-77T"/>
+                            <outlet property="delegate" destination="hOF-4g-uwx" id="lSy-qp-8a1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Most Recent" id="0uL-iB-TLZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89C-Pj-J3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3048" y="436"/>
+        </scene>
         <!--List Flickr PhotosTVC - Top 50 Images-->
         <scene sceneID="wPc-FL-vDZ">
             <objects>
@@ -140,23 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjn-7d-9LP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3260" y="14"/>
-        </scene>
-        <!--Navigation Controller - Most Recent-->
-        <scene sceneID="Cv2-a2-UQf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VHh-hH-GCH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Most Recent" image="swap" id="7XU-3C-Y82"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t5g-qW-wAc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DXo-0c-pct" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1125" y="374"/>
+            <point key="canvasLocation" x="3786" y="14"/>
         </scene>
         <!--Navigation Controller - TopRegions-->
         <scene sceneID="nFH-V0-k5m">
@@ -189,20 +221,40 @@
                     </tabBar>
                     <connections>
                         <segue destination="2QE-a2-4Hx" kind="relationship" relationship="viewControllers" id="0ne-b2-PLS"/>
-                        <segue destination="VHh-hH-GCH" kind="relationship" relationship="viewControllers" id="FFi-Ve-nt8"/>
+                        <segue destination="ALK-ce-RDF" kind="relationship" relationship="viewControllers" id="C0B-FJ-Adx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgg-cB-b56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="506" y="379"/>
         </scene>
+        <!--Navigation Controller - Most Recent-->
+        <scene sceneID="5Ok-FD-mhU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ALK-ce-RDF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Most Recent" id="LjA-8h-fF0"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="QLA-Xb-GqN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="COL-e4-cSy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hOF-4g-uwx" kind="relationship" relationship="rootViewController" id="nyK-2d-I6I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLC-OK-TXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="366"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="swap" width="30" height="30"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="8hq-q1-Puz"/>
+    </inferredMetricsTieBreakers>
 </document>

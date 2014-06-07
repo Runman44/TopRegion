@@ -14,6 +14,7 @@
 		BBAA8FE11941FAEB00E8374E /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA8FE01941FAEB00E8374E /* ImageViewController.m */; };
 		BBAA8FEF1941FB6500E8374E /* ListFlickrPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA8FEC1941FB6400E8374E /* ListFlickrPhotosTVC.m */; };
 		BBAA8FF61942038F00E8374E /* FlickrPhotosCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA8FF51942038F00E8374E /* FlickrPhotosCDTVC.m */; };
+		BBAA901319432D0C00E8374E /* ListFlickrMostRecentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA901219432D0C00E8374E /* ListFlickrMostRecentTVC.m */; };
 		BBB1D18A193DF165009A903A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D188193DF165009A903A /* Model.xcdatamodeld */; };
 		BBB1D18D193DF47F009A903A /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D18C193DF47F009A903A /* CoreDataTableViewController.m */; };
 		BBB1D1A3193DFD64009A903A /* Photo+Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1D1A2193DFD64009A903A /* Photo+Flickr.m */; };
@@ -64,6 +65,8 @@
 		BBAA8FEC1941FB6400E8374E /* ListFlickrPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListFlickrPhotosTVC.m; path = ../../TopPlaces/TopPlaces/ListFlickrPhotosTVC.m; sourceTree = "<group>"; };
 		BBAA8FF41942038F00E8374E /* FlickrPhotosCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotosCDTVC.h; sourceTree = "<group>"; };
 		BBAA8FF51942038F00E8374E /* FlickrPhotosCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotosCDTVC.m; sourceTree = "<group>"; };
+		BBAA901119432D0C00E8374E /* ListFlickrMostRecentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFlickrMostRecentTVC.h; sourceTree = "<group>"; };
+		BBAA901219432D0C00E8374E /* ListFlickrMostRecentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFlickrMostRecentTVC.m; sourceTree = "<group>"; };
 		BBB1D189193DF165009A903A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		BBB1D18B193DF47F009A903A /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = "../../../photomania-2013-14-master/Photomania/CoreDataTableViewController/CoreDataTableViewController.h"; sourceTree = "<group>"; };
 		BBB1D18C193DF47F009A903A /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = "../../../photomania-2013-14-master/Photomania/CoreDataTableViewController/CoreDataTableViewController.m"; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		BBAA8FF11941FB9800E8374E /* Flickr Recent */ = {
 			isa = PBXGroup;
 			children = (
+				BBAA901119432D0C00E8374E /* ListFlickrMostRecentTVC.h */,
+				BBAA901219432D0C00E8374E /* ListFlickrMostRecentTVC.m */,
 			);
 			name = "Flickr Recent";
 			sourceTree = "<group>";
@@ -137,10 +142,10 @@
 		BBAA8FF31941FBCD00E8374E /* Flickr Photos */ = {
 			isa = PBXGroup;
 			children = (
-				BBAA8FEB1941FB6400E8374E /* ListFlickrPhotosTVC.h */,
-				BBAA8FEC1941FB6400E8374E /* ListFlickrPhotosTVC.m */,
 				BBAA8FF41942038F00E8374E /* FlickrPhotosCDTVC.h */,
 				BBAA8FF51942038F00E8374E /* FlickrPhotosCDTVC.m */,
+				BBAA8FEB1941FB6400E8374E /* ListFlickrPhotosTVC.h */,
+				BBAA8FEC1941FB6400E8374E /* ListFlickrPhotosTVC.m */,
 			);
 			name = "Flickr Photos";
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				BBB1D1AA193DFED9009A903A /* FlickrFetcher.m in Sources */,
 				BBB1D1A3193DFD64009A903A /* Photo+Flickr.m in Sources */,
 				BBCE38F7192BED3F00F45897 /* TopRegionViewController.m in Sources */,
+				BBAA901319432D0C00E8374E /* ListFlickrMostRecentTVC.m in Sources */,
 				BBAA8FEF1941FB6500E8374E /* ListFlickrPhotosTVC.m in Sources */,
 				BBCE38EE192BED3F00F45897 /* TopRegionAppDelegate.m in Sources */,
 				BBAA8FE11941FAEB00E8374E /* ImageViewController.m in Sources */,
