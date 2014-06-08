@@ -12,7 +12,7 @@
 #import "ListFlickrPhotosTVC.h"
 
 @interface RegionCDTVC ()
-
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
 
 @implementation RegionCDTVC

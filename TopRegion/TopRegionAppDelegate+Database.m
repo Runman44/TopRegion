@@ -13,8 +13,6 @@
 
 - (void) openManagedDocument
 {
-    // Override point for customization after application launch.
-    
     // Maak een url path aan naar het document in het apparaat
 	NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask]firstObject];

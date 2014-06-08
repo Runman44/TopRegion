@@ -8,6 +8,8 @@
 
 #import "ListFlickrMostRecentTVC.h"
 #import "PhotoDatabaseAvailability.h"
+#import "Photo+Flickr.h"
+#import "ImageViewController.h"
 
 @interface ListFlickrMostRecentTVC ()
 
@@ -22,11 +24,12 @@
     }];
 }
 
--(void) setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     _managedObjectContext = managedObjectContext;
     [self setupFetchedResultsController];
 }
+
 
 #define MAXRESULTS 50
 
@@ -45,6 +48,19 @@
                                                                                        cacheName:nil];
     } else {
         self.fetchedResultsController = nil;
+    }
+}
+
+- (void)prepareViewController:(id)vc
+                     forSegue:(NSString *)segueIdentifer
+                fromIndexPath:(NSIndexPath *)indexPath
+{
+    Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    photo.lastViewed = [NSDate date];
+    if ([vc isKindOfClass:[ImageViewController class]]) {
+        ImageViewController *ivc = (ImageViewController *)vc;
+        ivc.imageData = [NSURL URLWithString:photo.imageURL];
+        ivc.title = photo.title;
     }
 }
 @end

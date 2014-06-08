@@ -10,6 +10,6 @@
 
 @interface RegionCDTVC : CoreDataTableViewController
 
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+
 
 @end
