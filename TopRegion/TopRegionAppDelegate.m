@@ -11,12 +11,14 @@
 #import "Photo+Flickr.h"
 #import "Place+PhotoTaken.h"
 #import "PhotoDatabaseAvailability.h"
+#import "PrivateAppDelegate.h"
+#import "TopRegionAppDelegate+Database.h"
 
 @interface TopRegionAppDelegate() <NSURLSessionDownloadDelegate>
 
 @property (copy, nonatomic) void (^flickrDownloadBackgroundSessionCompletionHandler)();
 @property (nonatomic) NSURLSession *flickrDownloadSession;
-@property (nonatomic) NSManagedObjectContext *photoDatabaseContext;
+
 
 @end
 
@@ -27,60 +29,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
-    // Maak een url path aan naar het document in het apparaat
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask]firstObject];
-    NSString *documentName = @"MyTestData";
-    NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
-    
-    // Maakt een managedDocument aan
-    UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
-    
-    // Kijk of het bestand al bestaat
-    // BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]){
-        // opent bestaande document
-        [document openWithCompletionHandler:^(BOOL success) {
-            NSLog(@"Its Done !");
-            if(success) {
-                self.photoDatabaseContext = document.managedObjectContext;
-            } else if (!success){
-                NSLog(@"Failed");
-            }
-        }];
-    } else {
-        // maakt nieuwe document aan
-        [document saveToURL:url
-           forSaveOperation:UIDocumentSaveForCreating
-          completionHandler:^(BOOL success) {
-              NSLog(@"Its Done ! and created it !");
-              if(success) {
-                  self.photoDatabaseContext = document.managedObjectContext;
-              } else if (!success){
-                  NSLog(@"Failed with url %@", document);
-              }
-          }];
-    }
-
-    [self startFlickrFetch];
+    [self openManagedDocument];
     return YES;
 }
 
 - (void)setPhotoDatabaseContext:(NSManagedObjectContext *)photoDatabaseContext
 {
     _photoDatabaseContext = photoDatabaseContext;
-    
-    [NSTimer scheduledTimerWithTimeInterval:TIME_INTERVAL_FLICKR_FETCH
-                                    target:self
-                                    selector:@selector(startFlickrFetch:)
-                                    userInfo:nil
-                                    repeats:YES];
-    
-    NSDictionary *userInfo = self.photoDatabaseContext ? @{PhotoDatabaseAvailabilityContext: self.photoDatabaseContext } : nil;
-    [[NSNotificationCenter defaultCenter] postNotificationName:PhotoDatabaseAvailabilityNotification object:self userInfo:userInfo];
+    if (self.photoDatabaseContext)
+    {
+        [NSTimer scheduledTimerWithTimeInterval:TIME_INTERVAL_FLICKR_FETCH
+                                         target:self
+                                       selector:@selector(startFlickrFetch:)
+                                       userInfo:nil
+                                        repeats:YES];
+        
+        NSDictionary *userInfo = self.photoDatabaseContext ? @{PhotoDatabaseAvailabilityContext: self.photoDatabaseContext } : nil;
+        [[NSNotificationCenter defaultCenter] postNotificationName:PhotoDatabaseAvailabilityNotification object:self userInfo:userInfo];
+        [self startFlickrFetch];
+    } else {
+        NSLog(@"No databaseContext set.");
+    }
 }
 
 - (void)startFlickrFetch:(NSTimer *) timer
@@ -160,10 +129,16 @@
 }
 
 
-//- (void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-//{
-//
-//}
+- (void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    // in lecture, we relied on our background flickrDownloadSession to do the fetch by calling [self startFlickrFetch]
+    // that was easy to code up, but pretty weak in terms of how much it will actually fetch (maybe almost never)
+    // that's because there's no guarantee that we'll be allowed to start that discretionary fetcher when we're in the background
+    // so let's simply make a non-discretionary, non-background-session fetch here
+    // we don't want it to take too long because the system will start to lose faith in us as a background fetcher and stop calling this as much
+    // so we'll limit the fetch to BACKGROUND_FETCH_TIMEOUT seconds (also we won't use valuable cellular data)
+    
+}
 
 
 

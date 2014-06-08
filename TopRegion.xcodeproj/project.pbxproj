@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBA83BB21944769700BFBD03 /* TopRegionAppDelegate+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA83BB11944769700BFBD03 /* TopRegionAppDelegate+Database.m */; };
 		BBAA8FD51941F2FE00E8374E /* Photograph.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA8FD41941F2FE00E8374E /* Photograph.m */; };
 		BBAA8FD81941F2FE00E8374E /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA8FD71941F2FE00E8374E /* Region.m */; };
 		BBAA8FDB1941F2FE00E8374E /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA8FDA1941F2FE00E8374E /* Place.m */; };
@@ -51,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BBA83BB01944769700BFBD03 /* TopRegionAppDelegate+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TopRegionAppDelegate+Database.h"; sourceTree = "<group>"; };
+		BBA83BB11944769700BFBD03 /* TopRegionAppDelegate+Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TopRegionAppDelegate+Database.m"; sourceTree = "<group>"; };
+		BBA83BB31944799E00BFBD03 /* PrivateAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateAppDelegate.h; sourceTree = "<group>"; };
 		BBAA8FD31941F2FE00E8374E /* Photograph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photograph.h; sourceTree = "<group>"; };
 		BBAA8FD41941F2FE00E8374E /* Photograph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photograph.m; sourceTree = "<group>"; };
 		BBAA8FD61941F2FE00E8374E /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
@@ -130,6 +134,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBA83BAF1944767700BFBD03 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BBCE38EC192BED3F00F45897 /* TopRegionAppDelegate.h */,
+				BBCE38ED192BED3F00F45897 /* TopRegionAppDelegate.m */,
+				BBA83BB01944769700BFBD03 /* TopRegionAppDelegate+Database.h */,
+				BBA83BB11944769700BFBD03 /* TopRegionAppDelegate+Database.m */,
+				BBA83BB31944799E00BFBD03 /* PrivateAppDelegate.h */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
 		BBAA8FF11941FB9800E8374E /* Flickr Recent */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +259,7 @@
 		BBCE38E3192BED3F00F45897 /* TopRegion */ = {
 			isa = PBXGroup;
 			children = (
+				BBA83BAF1944767700BFBD03 /* AppDelegate */,
 				BBAA8FF71942351A00E8374E /* CoreDataModel */,
 				BBB1D18E193DF486009A903A /* CoreDataTableViewController */,
 				BBAA8FF91942354A00E8374E /* Flickr TopRegions */,
@@ -256,8 +273,6 @@
 				BBAA8FE01941FAEB00E8374E /* ImageViewController.m */,
 				BBCE38F5192BED3F00F45897 /* TopRegionViewController.h */,
 				BBCE38F6192BED3F00F45897 /* TopRegionViewController.m */,
-				BBCE38EC192BED3F00F45897 /* TopRegionAppDelegate.h */,
-				BBCE38ED192BED3F00F45897 /* TopRegionAppDelegate.m */,
 				BBB1D1B2193E5709009A903A /* PhotoDatabaseAvailability.h */,
 				BBCE38F8192BED3F00F45897 /* Images.xcassets */,
 				BBCE38E4192BED3F00F45897 /* Supporting Files */,
@@ -401,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBAA8FD81941F2FE00E8374E /* Region.m in Sources */,
+				BBA83BB21944769700BFBD03 /* TopRegionAppDelegate+Database.m in Sources */,
 				BBB1D1AA193DFED9009A903A /* FlickrFetcher.m in Sources */,
 				BBB1D1A3193DFD64009A903A /* Photo+Flickr.m in Sources */,
 				BBCE38F7192BED3F00F45897 /* TopRegionViewController.m in Sources */,
