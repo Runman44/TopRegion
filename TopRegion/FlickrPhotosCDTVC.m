@@ -48,7 +48,7 @@
                 fromIndexPath:(NSIndexPath *)indexPath
 {
     Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
-# warning nog meer checks om uit te voeren
+# warning dit wil niet saven ! 
     photo.lastViewed = [NSDate date];
     if ([vc isKindOfClass:[ImageViewController class]]) {
         ImageViewController *ivc = (ImageViewController *)vc;

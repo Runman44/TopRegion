@@ -21,6 +21,7 @@
 @end
 
 #define FLICKR_FETCH @"Flickr Photos Retrieve"
+#define TIME_INTERVAL_FLICKR_FETCH 20*60
 
 @implementation TopRegionAppDelegate
 
@@ -72,8 +73,19 @@
 {
     _photoDatabaseContext = photoDatabaseContext;
     
+    [NSTimer scheduledTimerWithTimeInterval:TIME_INTERVAL_FLICKR_FETCH
+                                    target:self
+                                    selector:@selector(startFlickrFetch:)
+                                    userInfo:nil
+                                    repeats:YES];
+    
     NSDictionary *userInfo = self.photoDatabaseContext ? @{PhotoDatabaseAvailabilityContext: self.photoDatabaseContext } : nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:PhotoDatabaseAvailabilityNotification object:self userInfo:userInfo];
+}
+
+- (void)startFlickrFetch:(NSTimer *) timer
+{
+    [self startFlickrFetch];
 }
 
 - (void)startFlickrFetch
@@ -109,7 +121,6 @@
 {
     NSData *flickrJSONData = [NSData dataWithContentsOfURL:url];
     NSDictionary *flickrPropertyList = [NSJSONSerialization JSONObjectWithData:flickrJSONData options:0 error:NULL];
-    NSLog(@"JSON %@", [flickrPropertyList valueForKeyPath:FLICKR_RESULTS_PHOTOS]);
     return [flickrPropertyList valueForKeyPath:FLICKR_RESULTS_PHOTOS];
 }
 
@@ -149,15 +160,10 @@
 }
 
 
-
-
-
-
-
-
-
-
-
+//- (void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+//{
+//
+//}
 
 
 
