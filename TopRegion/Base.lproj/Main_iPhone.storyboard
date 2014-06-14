@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="2522" y="358"/>
         </scene>
-        <!--List Flickr PhotosTVC - Top 50 Images-->
+        <!--List Flickr PhotosTVC - Photos-->
         <scene sceneID="wPc-FL-vDZ">
             <objects>
                 <tableViewController id="OSz-aL-MRs" customClass="ListFlickrPhotosTVC" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                             <outlet property="delegate" destination="OSz-aL-MRs" id="HJf-pp-UWg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top 50 Images" id="3o8-eD-lAi"/>
+                    <navigationItem key="navigationItem" title="Photos" id="3o8-eD-lAi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z18-BI-7Bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

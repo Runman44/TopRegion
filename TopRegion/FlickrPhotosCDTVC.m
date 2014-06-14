@@ -84,14 +84,27 @@
                   fromIndexPath:indexPath];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    id detailvc = [self.splitViewController.viewControllers lastObject];
+//    if ([detailvc isKindOfClass:[UINavigationController class]]) {
+//        detailvc = [((UINavigationController *)detailvc).viewControllers firstObject];
+//        [self prepareViewController:detailvc
+//                           forSegue:nil
+//                      fromIndexPath:indexPath];
+//    }
+//}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id detailvc = [self.splitViewController.viewControllers lastObject];
-    if ([detailvc isKindOfClass:[UINavigationController class]]) {
-        detailvc = [((UINavigationController *)detailvc).viewControllers firstObject];
-        [self prepareViewController:detailvc
-                           forSegue:nil
-                      fromIndexPath:indexPath];
+    id detail = self.splitViewController.viewControllers[1];
+    if ([detail isKindOfClass:[UINavigationController class]]) {
+        detail = [((UINavigationController *)detail).viewControllers firstObject];
+    }
+    if ([detail isKindOfClass:[ImageViewController class]]) {
+        NSLog(@"Juiste Slave");
+        [self prepareViewController:detail forSegue:nil fromIndexPath:indexPath];
     }
 }
 
