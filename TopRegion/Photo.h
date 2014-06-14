@@ -2,7 +2,7 @@
 //  Photo.h
 //  TopRegion
 //
-//  Created by Dennis Anderson on 6/6/14.
+//  Created by Dennis Anderson on 6/14/14.
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
@@ -18,10 +18,11 @@
 @property (nonatomic, retain) NSString * photoid;
 @property (nonatomic, retain) NSString * placeid;
 @property (nonatomic, retain) NSString * subtitle;
-@property (nonatomic, retain) NSString * thumbnailData;
+@property (nonatomic, retain) NSData * thumbnailData;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * thumbnailURL;
 @property (nonatomic, retain) Place *wasTaken;
-@property (nonatomic, retain) Photograph *whoTook;
 @property (nonatomic, retain) Region *whichRegion;
+@property (nonatomic, retain) Photograph *whoTook;
 
 @end

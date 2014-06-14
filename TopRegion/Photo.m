@@ -2,7 +2,7 @@
 //  Photo.m
 //  TopRegion
 //
-//  Created by Dennis Anderson on 6/6/14.
+//  Created by Dennis Anderson on 6/14/14.
 //  Copyright (c) 2014 MrAnderson. All rights reserved.
 //
 
@@ -21,8 +21,9 @@
 @dynamic subtitle;
 @dynamic thumbnailData;
 @dynamic title;
+@dynamic thumbnailURL;
 @dynamic wasTaken;
-@dynamic whoTook;
 @dynamic whichRegion;
+@dynamic whoTook;
 
 @end
