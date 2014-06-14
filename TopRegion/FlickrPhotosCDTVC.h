@@ -10,8 +10,5 @@
 
 @interface FlickrPhotosCDTVC : CoreDataTableViewController
 
-- (void)prepareViewController:(id)vc
-                     forSegue:(NSString *)segueIdentifer
-                fromIndexPath:(NSIndexPath *)indexPath;
 
 @end

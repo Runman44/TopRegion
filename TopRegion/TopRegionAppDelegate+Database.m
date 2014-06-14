@@ -16,7 +16,7 @@
     // Maak een url path aan naar het document in het apparaat
 	NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask]firstObject];
-    NSString *documentName = @"MyTestData";
+    NSString *documentName = @"TopRegionData";
     NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
     
     // Maakt een managedDocument aan

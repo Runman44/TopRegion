@@ -48,8 +48,9 @@
                 fromIndexPath:(NSIndexPath *)indexPath
 {
     Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
-# warning dit wil niet saven ! 
     photo.lastViewed = [NSDate date];
+    NSError *error;
+    [photo.managedObjectContext save:&error];
     if ([vc isKindOfClass:[ImageViewController class]]) {
         ImageViewController *ivc = (ImageViewController *)vc;
         ivc.imageData = [NSURL URLWithString:photo.imageURL];

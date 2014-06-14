@@ -34,14 +34,12 @@
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     
     [self openManagedDocument];
-    [self startFlickrFetch];
     return YES;
 }
 
 - (void)setPhotoDatabaseContext:(NSManagedObjectContext *)photoDatabaseContext
 {
     _photoDatabaseContext = photoDatabaseContext;
-    
     [self.flickrForegroundFetchTimer invalidate];
     self.flickrForegroundFetchTimer = nil;
     
@@ -57,7 +55,7 @@
         NSDictionary *userInfo = self.photoDatabaseContext ? @{PhotoDatabaseAvailabilityContext: self.photoDatabaseContext } : nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:PhotoDatabaseAvailabilityNotification object:self userInfo:userInfo];
         
-        
+        [self startFlickrFetch];
     } else {
         NSLog(@"No databaseContext set.");
     }
@@ -258,6 +256,22 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
     }
 }
 
+- (void)applicationWillTerminate:(UIApplication *)application{[self saveContext];}
+- (void)applicationWillResignActive:(UIApplication *)application{[self saveContext];}
+- (void)applicationDidEnterBackground:(UIApplication *)application{[self saveContext];}
+
+- (void)saveContext
+{
+    NSError *error;
+    
+    if (_photoDatabaseContext != nil) {
+        if ([_photoDatabaseContext hasChanges] && ![_photoDatabaseContext save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            
+            abort();
+        }
+    }
+}
 
 
 

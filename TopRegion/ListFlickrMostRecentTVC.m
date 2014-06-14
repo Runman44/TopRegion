@@ -51,16 +51,4 @@
     }
 }
 
-- (void)prepareViewController:(id)vc
-                     forSegue:(NSString *)segueIdentifer
-                fromIndexPath:(NSIndexPath *)indexPath
-{
-    Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    photo.lastViewed = [NSDate date];
-    if ([vc isKindOfClass:[ImageViewController class]]) {
-        ImageViewController *ivc = (ImageViewController *)vc;
-        ivc.imageData = [NSURL URLWithString:photo.imageURL];
-        ivc.title = photo.title;
-    }
-}
 @end
