@@ -97,7 +97,6 @@
     } else {
         completionHandler(UIBackgroundFetchResultNoData); // no app-switcher update if no database!
     }
-    NSLog(@"BACKGROUND FETCH!");
 }
 
 // this is called whenever a URL we have requested with a background session returns and we are in the background
@@ -182,11 +181,9 @@
                  andThenExecuteBlock:(void(^)())whenDone
 {
     if (context) {
-        NSLog(@"HMMM %@, %@", context, localFile);
         NSArray *photos = [self flickrPhotosAtURL:localFile];
         [context performBlock:^{
             [Photo loadPhotosFromFlickrArray:photos intoManagedObjectContext:context];
-            NSLog(@"PHOTO %@", [photos firstObject]);
             if (whenDone) whenDone();
         }];
     } else {

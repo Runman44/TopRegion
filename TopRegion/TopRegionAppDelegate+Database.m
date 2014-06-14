@@ -28,7 +28,6 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]){
         // opent bestaande document
         [document openWithCompletionHandler:^(BOOL success) {
-            NSLog(@"Its Done !");
             if(success) {
                 self.photoDatabaseContext = document.managedObjectContext;
             } else if (!success){
@@ -40,8 +39,7 @@
         [document saveToURL:url
            forSaveOperation:UIDocumentSaveForCreating
           completionHandler:^(BOOL success) {
-              NSLog(@"Its Done ! and created it !");
-              if(success) {
+            if(success) {
                   self.photoDatabaseContext = document.managedObjectContext;
               } else if (!success){
                   NSLog(@"Failed with url %@", document);

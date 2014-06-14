@@ -30,7 +30,6 @@
         region = [NSEntityDescription insertNewObjectForEntityForName:@"Region" inManagedObjectContext:context];
         region.regionname = name;
     }
-    NSLog(@"JAJA, %@", region.regionname);
     return region;
 }
 
