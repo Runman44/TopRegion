@@ -188,7 +188,7 @@
         <scene sceneID="3XF-Gn-1Ag">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vj5-Xa-fBh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TopRegions" id="yHI-AC-U4O"/>
+                    <tabBarItem key="tabBarItem" title="TopRegions" image="photo" id="yHI-AC-U4O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TKQ-gQ-HBb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -240,7 +240,7 @@
         <scene sceneID="UVI-6W-oos">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4tT-c0-ikX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Most Recent" id="dNw-Q8-RXr"/>
+                    <tabBarItem key="tabBarItem" title="Most Recent" image="swap" id="dNw-Q8-RXr"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bNs-sd-u9R"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1jU-Ib-01x">
@@ -275,6 +275,10 @@
             <point key="canvasLocation" x="2080" y="599"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo" width="30" height="30"/>
+        <image name="swap" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
