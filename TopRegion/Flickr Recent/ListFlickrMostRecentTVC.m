@@ -30,8 +30,12 @@
     [self setupFetchedResultsController];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self setupFetchedResultsController];
+}
 
-#define MAXRESULTS 50
+#define MAXRESULTS 20
 
 - (void)setupFetchedResultsController
 {
