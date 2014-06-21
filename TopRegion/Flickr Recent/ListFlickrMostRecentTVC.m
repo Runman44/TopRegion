@@ -19,6 +19,7 @@
 
 - (void) awakeFromNib
 {
+    // listen to the radiotower that has been broadcast in the appdelegate
     [[NSNotificationCenter defaultCenter] addObserverForName:PhotoDatabaseAvailabilityNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         self.managedObjectContext = note.userInfo[PhotoDatabaseAvailabilityContext];
     }];
@@ -42,6 +43,7 @@
     NSManagedObjectContext *context = self.managedObjectContext;
     
     if (context) {
+        // fetch photos were lastViewed has been set
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
         request.predicate = [NSPredicate predicateWithFormat:@"lastViewed != nil"];
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastViewed" ascending:NO]];

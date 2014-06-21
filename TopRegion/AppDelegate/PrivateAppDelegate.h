@@ -15,7 +15,6 @@
 
 @property (nonatomic) NSManagedObjectContext *photoDatabaseContext;
 
-
 @end
 
 

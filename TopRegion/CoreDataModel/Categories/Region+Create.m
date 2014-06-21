@@ -14,7 +14,7 @@
 {
     Region *region = nil;
     
-    
+    // fetch regions by a certain name
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Region"];
     request.predicate = [NSPredicate predicateWithFormat:@"regionname = %@", name];
     
@@ -24,8 +24,10 @@
     if (!matches || error || [matches count] > 1) {
         NSLog(@"No region fetch, %@", error);
     } else if([matches count]){
+        // if region already exists, take that region
         region = [matches firstObject];
     } else {
+        // create a new region if no region by that name exists
         region = [NSEntityDescription insertNewObjectForEntityForName:@"Region" inManagedObjectContext:context];
         region.regionname = name;
     }

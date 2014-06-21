@@ -13,8 +13,6 @@
 
 @implementation ListFlickrPhotosTVC
 
-
-
 - (void)setRegion:(Region *)region
 {
     _region = region;
@@ -29,6 +27,7 @@
     NSManagedObjectContext *context = self.region.managedObjectContext;
     
     if (context) {
+        // fetch photos where the regionname equals the region where the user has clicked on
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
         request.predicate = [NSPredicate predicateWithFormat:@"whichRegion = %@", self.region];
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title"

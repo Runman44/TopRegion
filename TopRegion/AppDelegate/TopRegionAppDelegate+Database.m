@@ -13,20 +13,20 @@
 
 - (void) openManagedDocument
 {
-    // Maak een url path aan naar het document in het apparaat
+    // Making a URL Path to the physical document on the mobile device
 	NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask]firstObject];
     NSString *documentName = @"TopRegionData";
     NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
-    
-    // Maakt een managedDocument aan
+
+    // Making a managedDocument
     UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
     
-    // Kijk of het bestand al bestaat
+    // Check if the document already exists
     // BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]){
-        // opent bestaande document
+        // opens the document and sets the managedObjectContext
         [document openWithCompletionHandler:^(BOOL success) {
             if(success) {
                 self.photoDatabaseContext = document.managedObjectContext;
@@ -35,7 +35,7 @@
             }
         }];
     } else {
-        // maakt nieuwe document aan
+        // creates the document and sets the managedObjectContext
         [document saveToURL:url
            forSaveOperation:UIDocumentSaveForCreating
           completionHandler:^(BOOL success) {

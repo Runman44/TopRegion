@@ -15,6 +15,7 @@
     Photograph *photograph = nil;
     
     if ([name length]) {
+        // fetch a photograph by a certain name
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photograph"];
         request.predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
 
@@ -25,10 +26,12 @@
         if (!matches || error || [matches count] > 1) {
             NSLog(@"No photograph fetch, %@", error);
         } else if(![matches count]){
+            // if there isn't a match, create a photograph
              photograph = [NSEntityDescription insertNewObjectForEntityForName:@"Photograph" inManagedObjectContext:context];
              photograph.name = name;
             
         } else {
+            // if there is a match, take that one as the photograph
             photograph = [matches lastObject];
         }
     }

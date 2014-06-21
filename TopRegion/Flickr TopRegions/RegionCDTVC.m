@@ -21,6 +21,7 @@
 
 - (void) awakeFromNib
 {
+    // listens to the radiotower that has been broadcast in the appdelegate
     [[NSNotificationCenter defaultCenter] addObserverForName:PhotoDatabaseAvailabilityNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         self.managedObjectContext = note.userInfo[PhotoDatabaseAvailabilityContext];
     }];
@@ -29,7 +30,7 @@
 -(void) setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     _managedObjectContext = managedObjectContext;
-    
+    // fetch the region
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Region"];
     request.predicate = nil;
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"numofPhotographer"
@@ -48,6 +49,7 @@
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Region Cell"];
     
+    // set the names into the tableview cells
     Region *region = [self.fetchedResultsController objectAtIndexPath:indexPath];
     if (region.regionname){
     cell.textLabel.text = region.regionname;
@@ -63,14 +65,15 @@
 
 - (void)prepareViewController:(id)vc forSegue:(NSString *)segueIdentifer fromIndexPath:(NSIndexPath *)indexPath
 {
+    // seque to the ListFlickrPhotosTVC
     Region *region = [self.fetchedResultsController objectAtIndexPath:indexPath];
     if ([vc isKindOfClass:[ListFlickrPhotosTVC class]]) {
         ListFlickrPhotosTVC *lfptvc = (ListFlickrPhotosTVC *)vc;
+        // set the region where the user has clicked on
         lfptvc.region = region;
     }
 }
 
-// boilerplate
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = nil;

@@ -20,7 +20,6 @@
 @property (strong, nonatomic) NSURLSession *flickrDownloadSession;
 @property (strong, nonatomic) NSTimer *flickrForegroundFetchTimer;
 
-
 @end
 
 #define FLICKR_FETCH @"Flickr Photos Retrieve"
@@ -33,6 +32,7 @@
     // when we're in the background, fetch as often as possible (which won't be much)
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     
+    // get the managedObjectContext
     [self openManagedDocument];
     return YES;
 }
@@ -43,16 +43,19 @@
     [self.flickrForegroundFetchTimer invalidate];
     self.flickrForegroundFetchTimer = nil;
     
+    // remove photos older then a x period of time.
     [Photo removeOldPhotosFromManagedObjectContext:self.photoDatabaseContext];
     
     if (self.photoDatabaseContext)
     {
+        // forground fetching over a period of time
        self.flickrForegroundFetchTimer = [NSTimer scheduledTimerWithTimeInterval:TIME_INTERVAL_FLICKR_FETCH
                                          target:self
                                        selector:@selector(startFlickrFetch:)
                                        userInfo:nil
                                         repeats:YES];
         
+        // posts the context as a radiotower
         NSDictionary *userInfo = self.photoDatabaseContext ? @{PhotoDatabaseAvailabilityContext: self.photoDatabaseContext } : nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:PhotoDatabaseAvailabilityNotification object:self userInfo:userInfo];
         
@@ -253,6 +256,8 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
         }];
     }
 }
+
+#pragma mark - Saving
 
 - (void)applicationWillTerminate:(UIApplication *)application{[self saveContext];}
 - (void)applicationWillResignActive:(UIApplication *)application{[self saveContext];}
