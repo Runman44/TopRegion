@@ -21,10 +21,9 @@
         
         NSError *error;
         NSArray *matches = [context executeFetchRequest:request error:&error];
-        
+        // if fetch doesn't match or is greater then one or an error occurred
         if (!matches || error || [matches count] > 1) {
-            // handle error
-            #warning handle error
+            NSLog(@"No photograph fetch, %@", error);
         } else if(![matches count]){
              photograph = [NSEntityDescription insertNewObjectForEntityForName:@"Photograph" inManagedObjectContext:context];
              photograph.name = name;
@@ -33,7 +32,6 @@
             photograph = [matches lastObject];
         }
     }
-   
     return photograph;
 }
 

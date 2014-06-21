@@ -43,6 +43,7 @@
     [self.flickrForegroundFetchTimer invalidate];
     self.flickrForegroundFetchTimer = nil;
     
+    [Photo removeOldPhotosFromManagedObjectContext:self.photoDatabaseContext];
     
     if (self.photoDatabaseContext)
     {

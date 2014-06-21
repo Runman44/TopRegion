@@ -20,10 +20,9 @@
     
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
-    
+    // if fetch doesn't match or match is greater then one or an error occurred
     if (!matches || error || [matches count] > 1) {
-        // handle error
-        #warning handle error
+        NSLog(@"No region fetch, %@", error);
     } else if([matches count]){
         region = [matches firstObject];
     } else {

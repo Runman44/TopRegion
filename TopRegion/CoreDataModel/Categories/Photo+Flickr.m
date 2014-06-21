@@ -26,10 +26,9 @@
     
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
-    
+    // if fetch doesn't match or is greater then one or an error occurred
     if (!matches || error || [matches count] > 1) {
-        // handle error
-        #warning handle error
+        NSLog(@"No photo fetch, %@", error);
     } else if([matches count]){
         photo = [matches firstObject];
     } else {
@@ -41,6 +40,7 @@
         photo.imageURL = [[FlickrFetcher URLforPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];
         photo.thumbnailURL = [[FlickrFetcher URLforPhoto:photoDictionary format:FlickrPhotoFormatSquare] absoluteString];
         photo.placeid = [photoDictionary valueForKeyPath:FLICKR_PLACE_ID];
+        photo.created = [NSDate date];
         NSString *photographerName = [photoDictionary valueForKeyPath:FLICKR_PHOTO_OWNER];
 
         photo.wasTaken = [Place placeWithId:placeid inManagedObjectContext:context];
@@ -52,7 +52,7 @@
 
 + (void)loadPhotosFromFlickrArray:(NSArray *)photos intoManagedObjectContext:(NSManagedObjectContext *)context
 {
-    #warning dit kan beter omdat je nu in de method 100x gaat fetching.. 50:20
+    // fetching photo for every photo in photos
     for (NSDictionary *photo in photos){
                [self photoWithFlickrInfo:photo inManagedObjectContext:context];
     }
@@ -61,14 +61,14 @@
     request.predicate = [NSPredicate predicateWithFormat:@"whichRegion = nil"];
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
+    // if fetch doesn't match or an error occurred
     if (!matches || error) {
-        // handle error
+        NSLog(@"No place fetch, %@", error);
     } else{
         dispatch_queue_t fetchQ = dispatch_queue_create("Flickr fetcher", NULL);
         // put a block to do the fetch onto that queue
         dispatch_async(fetchQ, ^{
             for (Place *place in matches){
-                // NSLog(@"Fetching Region Info");
                 // fetch the JSON data from Flickr
                 NSURL *url = [FlickrFetcher URLforInformationAboutPlace:place.placeid];
                 NSData *jsonResults = [NSData dataWithContentsOfURL:url];
@@ -93,6 +93,39 @@
             }
         });
     }
+}
+
+#define TIMETOREMOVEOLDPHOTS 60*60*24*7
++ (void) removeOldPhotosFromManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
+    request.predicate = [NSPredicate predicateWithFormat:@"created < %@", [NSDate dateWithTimeIntervalSinceNow:-TIMETOREMOVEOLDPHOTS]];
+    NSError *error = nil;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    // if fetch doesn't match or an error occurred
+    if (!matches || error) {
+        NSLog(@"No photo fetch, %@", error);
+    } else if (![matches count]) {
+        // do nothing
+    } else {
+        for (Photo *photo in matches) {
+            [photo remove: photo];
+        }
+    }
+}
+
+- (void)remove:(Photo *)photo
+{
+    if ([photo.whoTook.photos count] == 1) {
+        [self.managedObjectContext deleteObject:photo.whoTook];
+    }
+    if ([photo.whichRegion.photos count] == 1) {
+        [self.managedObjectContext deleteObject:photo.whichRegion];
+    } else {
+        photo.whichRegion.numofPhotographer = @([photo.whichRegion.photographs count]);
+    }
+    photo.lastViewed = nil;
+    [self.managedObjectContext deleteObject:photo];
 }
 
 @end

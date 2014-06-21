@@ -22,6 +22,7 @@
 		BBCE3902192BED4000F45897 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE38E1192BED3F00F45897 /* UIKit.framework */; };
 		BBCE390A192BED4000F45897 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBCE3908192BED4000F45897 /* InfoPlist.strings */; };
 		BBCE390C192BED4000F45897 /* TopRegionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCE390B192BED4000F45897 /* TopRegionTests.m */; };
+		BBCE5B7F1955AF500068D339 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCE5B7E1955AF500068D339 /* Photo.m */; };
 		BBD0186E19546BBD00108483 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0186D19546BBD00108483 /* CoreDataTableViewController.m */; };
 		BBD0187119546C9400108483 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0187019546C9400108483 /* ImageViewController.m */; };
 		BBD0187419546F3300108483 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0187319546F3300108483 /* FlickrFetcher.m */; };
@@ -33,7 +34,6 @@
 		BBD01897195478BC00108483 /* Photograph+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD01889195478BC00108483 /* Photograph+Create.m */; };
 		BBD01898195478BC00108483 /* Place+PhotoTaken.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0188B195478BC00108483 /* Place+PhotoTaken.m */; };
 		BBD01899195478BC00108483 /* Region+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0188D195478BC00108483 /* Region+Create.m */; };
-		BBD0189A195478BC00108483 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD0188F195478BC00108483 /* Photo.m */; };
 		BBD0189B195478BC00108483 /* Photograph.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD01891195478BC00108483 /* Photograph.m */; };
 		BBD0189C195478BC00108483 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD01893195478BC00108483 /* Place.m */; };
 		BBD0189D195478BC00108483 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD01895195478BC00108483 /* Region.m */; };
@@ -72,6 +72,8 @@
 		BBCE3907192BED4000F45897 /* TopRegionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TopRegionTests-Info.plist"; sourceTree = "<group>"; };
 		BBCE3909192BED4000F45897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BBCE390B192BED4000F45897 /* TopRegionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopRegionTests.m; sourceTree = "<group>"; };
+		BBCE5B7D1955AF500068D339 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		BBCE5B7E1955AF500068D339 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		BBD0186519546A1500108483 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
 		BBD0186C19546BBD00108483 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		BBD0186D19546BBD00108483 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
@@ -95,8 +97,6 @@
 		BBD0188B195478BC00108483 /* Place+PhotoTaken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+PhotoTaken.m"; sourceTree = "<group>"; };
 		BBD0188C195478BC00108483 /* Region+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Region+Create.h"; sourceTree = "<group>"; };
 		BBD0188D195478BC00108483 /* Region+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Region+Create.m"; sourceTree = "<group>"; };
-		BBD0188E195478BC00108483 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		BBD0188F195478BC00108483 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		BBD01890195478BC00108483 /* Photograph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photograph.h; sourceTree = "<group>"; };
 		BBD01891195478BC00108483 /* Photograph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photograph.m; sourceTree = "<group>"; };
 		BBD01892195478BC00108483 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
@@ -269,10 +269,10 @@
 			isa = PBXGroup;
 			children = (
 				BBD01885195478BC00108483 /* Categories */,
-				BBD0188E195478BC00108483 /* Photo.h */,
-				BBD0188F195478BC00108483 /* Photo.m */,
 				BBD01890195478BC00108483 /* Photograph.h */,
 				BBD01891195478BC00108483 /* Photograph.m */,
+				BBCE5B7D1955AF500068D339 /* Photo.h */,
+				BBCE5B7E1955AF500068D339 /* Photo.m */,
 				BBD01892195478BC00108483 /* Place.h */,
 				BBD01893195478BC00108483 /* Place.m */,
 				BBD01894195478BC00108483 /* Region.h */,
@@ -418,11 +418,11 @@
 				BBD0186E19546BBD00108483 /* CoreDataTableViewController.m in Sources */,
 				BBD018811954789D00108483 /* ListFlickrPhotosTVC.m in Sources */,
 				BBD0189B195478BC00108483 /* Photograph.m in Sources */,
-				BBD0189A195478BC00108483 /* Photo.m in Sources */,
 				BBD018801954789D00108483 /* FlickrPhotosCDTVC.m in Sources */,
 				BBCE38F7192BED3F00F45897 /* TopRegionViewController.m in Sources */,
 				BBD01897195478BC00108483 /* Photograph+Create.m in Sources */,
 				BBD01898195478BC00108483 /* Place+PhotoTaken.m in Sources */,
+				BBCE5B7F1955AF500068D339 /* Photo.m in Sources */,
 				BBD0189C195478BC00108483 /* Place.m in Sources */,
 				BBD018831954789D00108483 /* RegionCDTVC.m in Sources */,
 				BBCE38EA192BED3F00F45897 /* main.m in Sources */,

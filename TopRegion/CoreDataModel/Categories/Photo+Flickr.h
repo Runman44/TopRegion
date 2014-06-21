@@ -14,4 +14,6 @@
 
 + (void)loadPhotosFromFlickrArray:(NSArray *)photos intoManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (void) removeOldPhotosFromManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
